@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeBounty Questions</title>
+    <link rel="stylesheet" href="question.css">
+</head>
+<body>
+        <header>
+            <h1>CodeBounty</h1>
+            <nav>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="landing.html">Explore</a></li>
+                    <li><a href="wallet.html">Wallet</a></li>
+                    <li><a href="profile.html">Profile</a></li>
+                </ul>
+            </nav>
+        </header>
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="close">&times;</span>
+            <div>
+                <div class="exchange">
+                    <span>CBT</span>
+                    <span>⇄</span>
+                    <span>INR</span>
+                </div>
+                <div>Your current CBT:</div>
+                <div>0</div>
+            </div>
+        </div>
+    </div>
+    <main>
+        <div class="questions-container">
+            <h1>Questions</h1>
+            <div class="search-filter">
+              <input type="text" placeholder="Search..." />
+              <button class="filter-btn">Filter</button>
+            </div>
+            <div class="questions-list">
+              <div class="question-item">
+                <div class="question-content">Sum</div>
+                <button class="solve-btn" id="p1">Solve Challenge</button>
+              </div>
+              <div class="question-item">
+                <div class="question-content">Product</div>
+                <button class="solve-btn" id="p2">Solve Challenge</button>
+              </div>
+              <div class="question-item">
+                <div class="question-content">Sub</div>
+                <button class="solve-btn" id="p3">Solve Challenge</button>
+              </div>
+              <div class="question-item">
+                <div class="question-content">Two Sum</div>
+                <button class="solve-btn" id="p4">Solve Challenge</button>
+              </div>
+            </div>
+          </div>
+    </main>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          const buttons = document.querySelectorAll(".solve-btn");
+    
+          buttons.forEach((button) => {
+            button.addEventListener("click", function () {
+              // alert(`ID: ${this.id}`);
+              localStorage.setItem("problemId", `${this.id}`);
+              window.location.assign('/ide')
+            });
+          });
+        });
+      </script>
+</body>
+</html>
